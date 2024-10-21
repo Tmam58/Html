@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir='rtl' lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>شرح HTML</title>
+</head>
+<body>
+    <div class="container">
+        <h1>شرح HTML</h1>
+        
+        <section>
+            <h2>تدرجات العناوين (h1 - h6)</h2>
+            <button onclick="tog('headers')">عرض العناوين</button>
+            <div id="headers" class="hidden">
+                <h1>عنوان رئيسي (h1)</h1>
+                <h2>عنوان ثانوي (h2)</h2>
+                <h3>عنوان ثلاثي (h3)</h3>
+                <h4>عنوان رباعي (h4)</h4>
+                <h5>عنوان خمسي (h5)</h5>
+                <h6>عنوان سداسي (h6)</h6>
+            </div>
+            <p>تُستخدم تدرجات العناوين (h1 إلى h6) لتحديد مستويات العناوين في الوثيقة، حيث h1 هو أعلى مستوى وh6 هو أدنى مستوى.</p>
+            <div class="code-sample">
+                &lt;h1&gt;عنوان رئيسي&lt;/h1&gt;<br>
+                &lt;h2&gt;عنوان ثانوي&lt;/h2&gt;<br>
+                &lt;h3&gt;عنوان ثلاثي&lt;/h3&gt;<br>
+                &lt;h4&gt;عنوان رباعي&lt;/h4&gt;<br>
+                &lt;h5&gt;عنوان خمسي&lt;/h5&gt;<br>
+                &lt;h6&gt;عنوان سداسي&lt;/h6&gt;
+            </div>
+        </section>
+
+        <section>
+            <h2>عنصر الفقرة (p)</h2>
+            <p>يُستخدم عنصر الفقرة لكتابة النصوص العادية. يمكنك إضافة أي محتوى نصي داخل هذا العنصر.</p>
+            <div class="code-sample">
+                &lt;p&gt;هذا نص فقرة مثال. يمكنك إضافة نصوص هنا.&lt;/p&gt;
+            </div>
+        </section>
+
+        <section>
+            <h2>التعداد الرقمي(ol) و التعداد النقطي(ul)</h2>
+            <h3>تعداد رقمي:</h3>
+            <ol>
+                <li>العنصر الأول</li>
+                <li>العنصر الثاني</li>
+                <li>العنصر الثالث</li>
+            </ol>
+            <div class="code-sample">
+                &lt;ol&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الأول&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الثاني&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الثالث&lt;/li&gt;<br>
+                &lt;/ol&gt;
+            </div>
+            
+            <h3>تعداد نقطي:</h3>
+            <ul>
+                <li>العنصر الأول</li>
+                <li>العنصر الثاني</li>
+                <li>العنصر الثالث</li>
+            </ul>
+            <div class="code-sample">
+                &lt;ul&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الأول&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الثاني&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;العنصر الثالث&lt;/li&gt;<br>
+                &lt;/ul&gt;
+            </div>
+            <p>تُستخدم القوائم لتنظيم المحتوى. القائمة المرتبة (ol) تُظهر العناصر بترتيب، بينما القائمة غير المرتبة (ul) تُظهر العناصر بدون ترتيب محدد.</p>
+        </section>
+
+        <section>
+            <h2>تجربة الكود</h2>
+            <textarea id="codeInput" rows="5" placeholder="أدخل كود HTML هنا..."></textarea>
+            <button onclick="run()">تشغيل الكود</button>
+            <div id="output" class="output"></div>
+        </section>
+    </div>
+
+    <script>
+        function tog(elementId) {
+            const element = document.getElementById(elementId);
+            element.classList.toggle('hidden');
+        }
+
+        function run() {
+            const code = document.getElementById('codeInput').value;
+            document.getElementById('output').innerHTML = code;
+        }
+    </script>
+</body>
+</html>
